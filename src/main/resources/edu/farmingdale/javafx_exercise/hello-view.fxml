@@ -1,16 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="edu.farmingdale.javafx_exercise.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="111.0" layoutY="23.0" prefHeight="450.0" prefWidth="519.0" stylesheets="TableViewStyle.css">
+        <columns>
+          <TableColumn fx:id="idColumn" editable="false" minWidth="0.0" prefWidth="55.199981689453125" resizable="false" style="-fx-background-color: #999999;" text="ID" />
+          <TableColumn minWidth="0.0" prefWidth="102.40003967285156" style="-fx-background-color: #999999;" text="First Name" />
+            <TableColumn prefWidth="93.5999755859375" style="-fx-background-color: #999999;" text="Last Name" />
+            <TableColumn prefWidth="114.4000244140625" style="-fx-background-color: #999999;" text="Department" />
+            <TableColumn prefWidth="59.20001220703125" style="-fx-background-color: #999999;" text="Major" />
+            <TableColumn prefWidth="93.5999755859375" style="-fx-background-color: #999999;" text="Email" />
+        </columns>
+      </TableView>
+      <Pane layoutY="10.0" prefHeight="450.0" prefWidth="129.0" style="-fx-background-color: #AA7733;">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="113.0" layoutX="7.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@accountIcon.png"/>
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="628.0" layoutY="17.0" prefHeight="440.0" prefWidth="178.0" style="-fx-background-color: #79DC05;">
+         <children>
+            <TextArea layoutX="8.0" layoutY="38.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="Last Name">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <TextArea layoutX="8.0" layoutY="64.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="Department">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <TextArea layoutX="8.0" layoutY="90.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="Major">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <TextArea layoutX="8.0" layoutY="116.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="Email">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <TextArea layoutX="8.0" layoutY="142.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="imageURL">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <TextArea layoutX="8.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="163.0" promptText="First Name">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextArea>
+            <Button layoutX="5.0" layoutY="386.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #AA7733;" text="Edit" />
+            <Button layoutX="5.0" layoutY="339.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #AA7733;" text="Delete" />
+            <Button layoutX="5.0" layoutY="292.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #AA7733;" text="Add" />
+            <Button layoutX="4.0" layoutY="245.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #AA7733;" text="Clear" />
+         </children>
+      </Pane>
+      <Pane layoutY="447.0" prefHeight="32.0" prefWidth="805.0" style="-fx-background-color: #999999;" />
+      <MenuBar layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="19.0" prefWidth="805.0" style="-fx-background-color: #884411;">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Theme">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Accordion />
+   </children>
+</Pane>
